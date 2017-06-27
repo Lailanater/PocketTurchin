@@ -1,5 +1,7 @@
 package com.fall3240summer17.android.pocketturchin;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.UUID;
 
 /**
@@ -9,6 +11,7 @@ import java.util.UUID;
 public class GalleryItem {
 
     private UUID mId;
+    private int mPicture;
     private String mTitle;
     private String mArtist;
     private String mGalleryName;
@@ -23,6 +26,14 @@ public class GalleryItem {
 
     public UUID getId() {
         return mId;
+    }
+
+    public int getPicture() {
+        return mPicture;
+    }
+
+    public void setPicture(int picture) {
+        mPicture = picture;
     }
 
     public String getTitle() {

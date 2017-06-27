@@ -8,13 +8,11 @@
 
     <ImageView
         android:id="@+id/gallery_image_placeholder"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="137dp"
+        android:layout_height="130dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_gallery"/>
@@ -27,12 +25,14 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/title_name"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
         app:layout_constraintLeft_toRightOf="@+id/gallery_image_placeholder"
-        app:layout_constraintRight_toLeftOf="@+id/right_arrow"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"/>
 
@@ -40,11 +40,15 @@
         android:id="@+id/artist_placeholder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/artist_name"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/gallery_name_placeholder"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/gallery_image_placeholder"
         app:layout_constraintRight_toLeftOf="@+id/right_arrow"
@@ -56,37 +60,39 @@
         android:id="@+id/gallery_name_placeholder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="-1dp"
         android:text="@string/gallery_name"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/gallery_image_placeholder"
-        app:layout_constraintRight_toLeftOf="@+id/right_arrow"
-        app:layout_constraintTop_toBottomOf="@+id/artist_placeholder"
+        app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        />
+        tools:layout_constraintRight_creator="1"/>
 
     <ImageView
         android:id="@+id/right_arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/ic_right_arrow"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_right_arrow"/>
+        android:layout_marginTop="8dp"/>
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_begin="152dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="101dp"/>
+        android:visibility="visible"/>
+
 </android.support.constraint.ConstraintLayout>

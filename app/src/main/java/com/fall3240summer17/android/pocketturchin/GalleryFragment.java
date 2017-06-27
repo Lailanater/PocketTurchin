@@ -1,6 +1,7 @@
 package com.fall3240summer17.android.pocketturchin;
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -50,9 +51,10 @@ public class GalleryFragment extends Fragment {
         //////////////////////// TEST VALUES /////////////////////////////
 
         GalleryItem item = new GalleryItem();
-        item.setArtist("Chris Lail");
-        item.setTitle("My Life");
-        item.setGalleryName("Main Plaza");
+        item.setPicture(R.drawable.collective_vigilance_1200x630);
+        item.setArtist("Maggie Flanigan");
+        item.setTitle("The Banks of the New River");
+        item.setGalleryName("Mayer Gallery");
 
         galleryItems.add(item);
 
@@ -102,6 +104,7 @@ public class GalleryFragment extends Fragment {
         public void bind(GalleryItem galleryItem) {
             mGalleryItem = galleryItem;
 
+            mImage.setImageResource(galleryItem.getPicture());
             mTitle.setText(mGalleryItem.getTitle());
             mArtist.setText(mGalleryItem.getArtist());
             mGalleryName.setText(mGalleryItem.getGalleryName());

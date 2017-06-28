@@ -44,6 +44,16 @@ public class PocketTurchinActivity extends AppCompatActivity {
     };
 
     @Override
+    public void onBackPressed() {
+        if (mFragmentManager.getBackStackEntryCount() != 0) {
+            mFragmentManager.popBackStack("GalleryDetailFragment", 1);
+            updateFragment(FRAGMENT_GALLERY);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pocket_turchin);

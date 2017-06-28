@@ -12,4 +12,8 @@
     <string name="title_name">Title</string>
     <string name="artist_name">Artist</string>
     <string name="gallery_name">Gallery</string>
+    <string name="title_detail_gallery">Title: </string>
+    <string name="artist_detail_gallery">Artist: </string>
+    <string name="gallery_detail_gallery">This piece is displayed in the </string>
+    <string name="exhibition_dates_detail_gallery">Exhibition dates: </string>
 </resources>

@@ -15,6 +15,7 @@ public class GalleryItem {
     private String mTitle;
     private String mArtist;
     private String mGalleryName;
+    private boolean mFavorited;
 
     public GalleryItem() {
         this(UUID.randomUUID());
@@ -58,5 +59,13 @@ public class GalleryItem {
 
     public void setGalleryName(String galleryName) {
         mGalleryName = galleryName;
+    }
+
+    public boolean isFavorited() {
+        return mFavorited;
+    }
+
+    public void setFavorited(boolean favorited) {
+        mFavorited = favorited;
     }
 }

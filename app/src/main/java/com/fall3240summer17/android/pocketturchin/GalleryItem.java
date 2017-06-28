@@ -2,6 +2,7 @@ package com.fall3240summer17.android.pocketturchin;
 
 import android.graphics.drawable.Drawable;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -16,6 +17,9 @@ public class GalleryItem {
     private String mArtist;
     private String mGalleryName;
     private boolean mFavorited;
+    private String mDescription;
+    private Date mBeginDate;
+    private Date mEndDate;
 
     public GalleryItem() {
         this(UUID.randomUUID());
@@ -23,6 +27,8 @@ public class GalleryItem {
 
     public GalleryItem(UUID id) {
         mId = id;
+        mBeginDate = new Date();
+        mEndDate = new Date();
     }
 
     public UUID getId() {
@@ -67,5 +73,29 @@ public class GalleryItem {
 
     public void setFavorited(boolean favorited) {
         mFavorited = favorited;
+    }
+
+    public String getDescription() {
+        return mDescription;
+    }
+
+    public void setDescription(String description) {
+        mDescription = description;
+    }
+
+    public Date getBeginDate() {
+        return mBeginDate;
+    }
+
+    public void setBeginDate(Date beginDate) {
+        mBeginDate = beginDate;
+    }
+
+    public Date getEndDate() {
+        return mEndDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        mEndDate = endDate;
     }
 }

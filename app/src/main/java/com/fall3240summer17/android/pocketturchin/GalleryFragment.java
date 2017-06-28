@@ -1,6 +1,7 @@
 package com.fall3240summer17.android.pocketturchin;
 
 
+import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 
 /**
@@ -25,12 +27,6 @@ public class GalleryFragment extends Fragment {
 
     private RecyclerView mGalleryRecycler;
     private GalleryAdapter mAdapter;
-
-
-    public GalleryFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,26 +42,21 @@ public class GalleryFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateUI();
+    }
+
     private void updateUI() {
-        List<GalleryItem> galleryItems = new ArrayList<GalleryItem>();
+        GalleryList galleryList = GalleryList.get(getActivity());
+        List<GalleryItem> galleryItems = galleryList.getGalleryItems();
 
-        //////////////////////// TEST VALUES /////////////////////////////
-
-        GalleryItem item = new GalleryItem();
-        item.setPicture(R.drawable.collective_vigilance_1200x630);
-        item.setArtist("Maggie Flanigan");
-        item.setTitle("The Banks of the New River");
-        item.setGalleryName("Mayer Gallery");
-
-        galleryItems.add(item);
-
-        GalleryItem item2 = new GalleryItem();
-        item2.setArtist("Justin Perry");
-        item2.setTitle("I Can't Draw");
-        item2.setGalleryName("East-side Atlanta Theater");
-
-        galleryItems.add(item2);
-        //////////////////////////////////////////////////////////////////
+        if(galleryItems.size() == 0) {
+            populateData();
+            galleryList = GalleryList.get(getActivity());
+            galleryItems = galleryList.getGalleryItems();
+        }
 
         if (mAdapter == null) {
             mAdapter = new GalleryAdapter(galleryItems);
@@ -101,7 +92,7 @@ public class GalleryFragment extends Fragment {
         public void onClick(View view) {
             //Toast.makeText(getActivity(), "GalleryRecycler clicked!", Toast.LENGTH_SHORT).show();
 
-            Fragment fragment = new GalleryDetailFragment();
+            Fragment fragment = GalleryDetailFragment.newInstance(mGalleryItem.getId());
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(R.id.content, fragment)
@@ -148,6 +139,26 @@ public class GalleryFragment extends Fragment {
         public void setGalleryItems(List<GalleryItem> items) {
             mGalleryItems = items;
         }
+    }
+
+    private void populateData() {
+        /*GalleryList galleryList = GalleryList.get(getActivity());
+
+
+        GalleryItem item = new GalleryItem();
+        item.setPicture(R.drawable.collective_vigilance_1200x630);
+        item.setArtist("Maggie Flanigan");
+        item.setTitle("The Banks of the New River");
+        item.setGalleryName("Mayer Gallery");
+
+        galleryList.addGalleryItem(item);
+
+        GalleryItem item2 = new GalleryItem();
+        item2.setArtist("Justin Perry");
+        item2.setTitle("I Can't Draw");
+        item2.setGalleryName("East-side Atlanta Theater");
+
+        galleryList.addGalleryItem(item2);*/
     }
 
 }

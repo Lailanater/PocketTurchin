@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class PocketTurchinActivity extends AppCompatActivity {
 
     private static final int FRAGMENT_GALLERY = 0;

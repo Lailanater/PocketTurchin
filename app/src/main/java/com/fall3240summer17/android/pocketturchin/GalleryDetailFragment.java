@@ -51,6 +51,11 @@ public class GalleryDetailFragment extends Fragment {
         mImage.setImageResource(R.drawable.collective_vigilance_1200x630);
 
         mFavoriteButton = (ImageButton) v.findViewById(R.id.favorite_button);
+        if (mGalleryItem.isFavorited()) {
+            mFavoriteButton.setImageResource(R.drawable.ic_favs_colored);
+        } else {
+            mFavoriteButton.setImageResource(R.drawable.ic_favs);
+        }
         mFavoriteButton.setOnClickListener(new View.OnClickListener() {
 
             @Override

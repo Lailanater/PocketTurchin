@@ -54,8 +54,6 @@ public class GalleryFragment extends Fragment {
 
         if(galleryItems.size() == 0) {
             populateData();
-            galleryList = GalleryList.get(getActivity());
-            galleryItems = galleryList.getGalleryItems();
         }
 
         if (mAdapter == null) {
@@ -142,7 +140,7 @@ public class GalleryFragment extends Fragment {
     }
 
     private void populateData() {
-        /*GalleryList galleryList = GalleryList.get(getActivity());
+        GalleryList galleryList = GalleryList.get(getActivity());
 
 
         GalleryItem item = new GalleryItem();
@@ -158,7 +156,7 @@ public class GalleryFragment extends Fragment {
         item2.setTitle("I Can't Draw");
         item2.setGalleryName("East-side Atlanta Theater");
 
-        galleryList.addGalleryItem(item2);*/
+        galleryList.addGalleryItem(item2);
     }
 
 }

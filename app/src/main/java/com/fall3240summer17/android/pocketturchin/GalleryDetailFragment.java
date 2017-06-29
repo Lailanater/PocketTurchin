@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.UUID;
 
 
@@ -66,7 +68,7 @@ public class GalleryDetailFragment extends Fragment {
         mDisplayedIn.append(mGalleryItem.getGalleryName());
 
         mExhibitionDates = (TextView) v.findViewById(R.id.exhibition_dates_detail_gallery);
-        mExhibitionDates.append(mGalleryItem.getBeginDate().toString() + " - " + mGalleryItem.getEndDate().toString());
+        mExhibitionDates.append(mGalleryItem.getBeginDate() + " - " + mGalleryItem.getEndDate());
 
         mDescription = (TextView) v.findViewById(R.id.description);
         mDescription.append(mGalleryItem.getDescription());

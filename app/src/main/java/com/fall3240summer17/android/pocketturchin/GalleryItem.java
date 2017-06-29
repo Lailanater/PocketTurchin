@@ -18,8 +18,8 @@ public class GalleryItem {
     private String mGalleryName;
     private boolean mFavorited;
     private String mDescription;
-    private Date mBeginDate;
-    private Date mEndDate;
+    private String mBeginDate;
+    private String mEndDate;
 
     public GalleryItem() {
         this(UUID.randomUUID());
@@ -27,8 +27,6 @@ public class GalleryItem {
 
     public GalleryItem(UUID id) {
         mId = id;
-        mBeginDate = new Date();
-        mEndDate = new Date();
     }
 
     public UUID getId() {
@@ -83,19 +81,19 @@ public class GalleryItem {
         mDescription = description;
     }
 
-    public Date getBeginDate() {
+    public String getBeginDate() {
         return mBeginDate;
     }
 
-    public void setBeginDate(Date beginDate) {
+    public void setBeginDate(String beginDate) {
         mBeginDate = beginDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return mEndDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         mEndDate = endDate;
     }
 }

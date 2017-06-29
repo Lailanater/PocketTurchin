@@ -148,25 +148,14 @@ public class GalleryFragment extends Fragment {
 
         GalleryItem item = new GalleryItem();
 
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.YEAR, 2017);
-        cal.set(Calendar.MONTH, Calendar.FEBRUARY);
-        cal.set(Calendar.DAY_OF_MONTH, 3);
-        Date date = cal.getTime();
-
         item.setPicture(R.drawable.collective_vigilance_1200x630);
         item.setArtist("Maggie Flanigan");
         item.setTitle("The Banks of the New River");
         item.setGalleryName("Mayer Gallery");
         item.setFavorited(false);
         item.setDescription(getString(R.string.gallery_description_1));
-        item.setBeginDate(date);
-
-        cal.set(Calendar.MONTH, Calendar.JULY);
-        cal.set(Calendar.DAY_OF_MONTH, 29);
-        date = cal.getTime();
-
-        item.setEndDate(date);
+        item.setBeginDate("February 3, 2017");
+        item.setEndDate("July 29, 2017");
 
 
         galleryList.addGalleryItem(item);
@@ -175,26 +164,61 @@ public class GalleryFragment extends Fragment {
 
         GalleryItem item2 = new GalleryItem();
 
-        cal.set(Calendar.YEAR, 2017);
-        cal.set(Calendar.MONTH, Calendar.APRIL);
-        cal.set(Calendar.DAY_OF_MONTH, 7);
-        date = cal.getTime();
-
         item2.setPicture(R.drawable.wayne_trapp_a_life_in_the_arts_1200x630);
         item2.setArtist("Wayne Trapp");
         item2.setTitle("A Life in the Arts");
         item2.setGalleryName("Bridge Gallery");
         item2.setFavorited(false);
         item2.setDescription(getString(R.string.gallery_description_2));
-        item2.setBeginDate(date);
-
-        cal.set(Calendar.MONTH, Calendar.NOVEMBER);
-        cal.set(Calendar.DAY_OF_MONTH, 4);
-        date = cal.getTime();
-
-        item2.setEndDate(date);
+        item2.setBeginDate("April 7, 2017");
+        item2.setEndDate("November 4, 2017");
 
         galleryList.addGalleryItem(item2);
+
+        ///////////////////////////////////////////////////////////////
+
+        GalleryItem item3 = new GalleryItem();
+
+        item3.setPicture(R.drawable.iconipop_awesome);
+        item3.setArtist("Michael Turchin");
+        item3.setTitle("ICONIPOP");
+        item3.setGalleryName("Gallery A");
+        item3.setFavorited(false);
+        item3.setDescription(getString(R.string.gallery_description_3));
+        item3.setBeginDate("June 2, 2017");
+        item3.setEndDate("September 9, 2017");
+
+        galleryList.addGalleryItem(item3);
+
+        ///////////////////////////////////////////////////////////////
+
+        GalleryItem item4 = new GalleryItem();
+
+        item4.setPicture(R.drawable.iconipop_amerikah);
+        item4.setArtist("Michael Turchin");
+        item4.setTitle("Amerikah");
+        item4.setGalleryName("Gallery B");
+        item4.setFavorited(false);
+        item4.setDescription(getString(R.string.gallery_description_4));
+        item4.setBeginDate("April 7, 2017");
+        item4.setEndDate("November 4, 2017");
+
+        galleryList.addGalleryItem(item4);
+
+        ///////////////////////////////////////////////////////////////
+
+        GalleryItem item5 = new GalleryItem();
+
+        item5.setPicture(R.drawable.behind_the_door_694x263);
+        item5.setArtist("Milisa Taylor-Hicks");
+        item5.setTitle("Behind The Door: Vanity's Demand");
+        item5.setGalleryName("Gallery B");
+        item5.setFavorited(false);
+        item5.setDescription(getString(R.string.gallery_description_5));
+        item5.setBeginDate("June 2, 2017");
+        item5.setEndDate("September 9, 2017");
+
+        galleryList.addGalleryItem(item5);
     }
 
 }

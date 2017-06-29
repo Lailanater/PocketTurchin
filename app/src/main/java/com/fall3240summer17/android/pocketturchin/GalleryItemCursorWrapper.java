@@ -26,8 +26,8 @@ public class GalleryItemCursorWrapper extends CursorWrapper {
         int favorited = getInt(getColumnIndex(GalleryTable.Cols.FAVORITE));
         String gallery = getString(getColumnIndex(GalleryTable.Cols.GALLERY));
         String description = getString(getColumnIndex(GalleryTable.Cols.DESCRIPTION));
-        long beginDate = getLong(getColumnIndex(GalleryTable.Cols.BEGIN_DATE));
-        long endDate = getLong(getColumnIndex(GalleryTable.Cols.END_DATE));
+        String beginDate = getString(getColumnIndex(GalleryTable.Cols.BEGIN_DATE));
+        String endDate = getString(getColumnIndex(GalleryTable.Cols.END_DATE));
 
         GalleryItem item = new GalleryItem(UUID.fromString(uuidString));
         item.setPicture(picture);
@@ -36,8 +36,8 @@ public class GalleryItemCursorWrapper extends CursorWrapper {
         item.setFavorited(favorited != 0);
         item.setGalleryName(gallery);
         item.setDescription(description);
-        item.setBeginDate(new Date(beginDate));
-        item.setEndDate(new Date(endDate));
+        item.setBeginDate(beginDate);
+        item.setEndDate(endDate);
 
         return item;
     }

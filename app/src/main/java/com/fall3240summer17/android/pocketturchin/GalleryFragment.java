@@ -16,6 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.UUID;
 
@@ -144,17 +147,52 @@ public class GalleryFragment extends Fragment {
 
 
         GalleryItem item = new GalleryItem();
+
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, 2017);
+        cal.set(Calendar.MONTH, Calendar.FEBRUARY);
+        cal.set(Calendar.DAY_OF_MONTH, 3);
+        Date date = cal.getTime();
+
         item.setPicture(R.drawable.collective_vigilance_1200x630);
         item.setArtist("Maggie Flanigan");
         item.setTitle("The Banks of the New River");
         item.setGalleryName("Mayer Gallery");
+        item.setFavorited(false);
+        item.setDescription(getString(R.string.gallery_description_1));
+        item.setBeginDate(date);
+
+        cal.set(Calendar.MONTH, Calendar.JULY);
+        cal.set(Calendar.DAY_OF_MONTH, 29);
+        date = cal.getTime();
+
+        item.setEndDate(date);
+
 
         galleryList.addGalleryItem(item);
 
+        ///////////////////////////////////////////////////////////////
+
         GalleryItem item2 = new GalleryItem();
-        item2.setArtist("Justin Perry");
-        item2.setTitle("I Can't Draw");
-        item2.setGalleryName("East-side Atlanta Theater");
+
+        cal.set(Calendar.YEAR, 2017);
+        cal.set(Calendar.MONTH, Calendar.APRIL);
+        cal.set(Calendar.DAY_OF_MONTH, 7);
+        date = cal.getTime();
+
+        item2.setPicture(R.drawable.wayne_trapp_a_life_in_the_arts_1200x630);
+        item2.setArtist("Wayne Trapp");
+        item2.setTitle("A Life in the Arts");
+        item2.setGalleryName("Bridge Gallery");
+        item2.setFavorited(false);
+        item2.setDescription(getString(R.string.gallery_description_2));
+        item2.setBeginDate(date);
+
+        cal.set(Calendar.MONTH, Calendar.NOVEMBER);
+        cal.set(Calendar.DAY_OF_MONTH, 4);
+        date = cal.getTime();
+
+        item2.setEndDate(date);
 
         galleryList.addGalleryItem(item2);
     }

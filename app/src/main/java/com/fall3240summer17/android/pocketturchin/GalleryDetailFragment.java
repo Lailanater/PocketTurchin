@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.UUID;
 
@@ -20,6 +21,11 @@ public class GalleryDetailFragment extends Fragment {
     private static final String ARG_GALLERY_ID = "gallery_id";
 
     private ImageView mImage;
+    private TextView mTitle;
+    private TextView mArtist;
+    private TextView mDisplayedIn;
+    private TextView mExhibitionDates;
+    private TextView mDescription;
     private ImageButton mFavoriteButton;
     private GalleryItem mGalleryItem;
 
@@ -48,7 +54,22 @@ public class GalleryDetailFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_gallery_detail, container, false);
 
         mImage = (ImageView) v.findViewById(R.id.image_detail_gallery);
-        mImage.setImageResource(R.drawable.collective_vigilance_1200x630);
+        mImage.setImageResource(mGalleryItem.getPicture());
+
+        mTitle = (TextView) v.findViewById(R.id.title_detail_gallery);
+        mTitle.append(mGalleryItem.getTitle());
+
+        mArtist = (TextView) v.findViewById(R.id.artist_detail_gallery);
+        mArtist.append(mGalleryItem.getArtist());
+
+        mDisplayedIn = (TextView) v.findViewById(R.id.displayed_detail_gallery);
+        mDisplayedIn.append(mGalleryItem.getGalleryName());
+
+        mExhibitionDates = (TextView) v.findViewById(R.id.exhibition_dates_detail_gallery);
+        mExhibitionDates.append(mGalleryItem.getBeginDate().toString() + " - " + mGalleryItem.getEndDate().toString());
+
+        mDescription = (TextView) v.findViewById(R.id.description);
+        mDescription.append(mGalleryItem.getDescription());
 
         mFavoriteButton = (ImageButton) v.findViewById(R.id.favorite_button);
         if (mGalleryItem.isFavorited()) {

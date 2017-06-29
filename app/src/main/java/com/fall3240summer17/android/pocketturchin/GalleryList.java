@@ -74,6 +74,26 @@ public class GalleryList {
         }
     }
 
+    public List<GalleryItem> getFavGalleryItems() {
+        List<GalleryItem> items = new ArrayList<>();
+
+        GalleryItemCursorWrapper cursor = queryGalleryItems(null, null);
+
+        try {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                if (cursor.getGalleryItem().isFavorited()) {
+                    items.add(cursor.getGalleryItem());
+                }
+                cursor.moveToNext();
+            }
+        } finally {
+            cursor.close();
+        }
+
+        return items;
+    }
+
     public void addGalleryItem(GalleryItem item) {
         ContentValues values = getContentValues(item);
 

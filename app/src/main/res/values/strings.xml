@@ -4,6 +4,20 @@
     <string name="title_favs">Favs</string>
     <string name="title_search">Search</string>
     <string name="title_about">About</string>
+    <string name="about_text">
+        <b>Mission statement</b>
+        \n\nThe Turchin Center for the Visual Arts at Appalachian State University engages visitors
+        from the university, community, nation and beyond in creating unique experiences through dynamic
+        and accessible exhibition, education, outreach and collection programs. These programs inspire
+        and support a lifelong engagement with the visual arts and create opportunities for participants
+        to learn more about themselves and the world around them.\n\n
+
+        <b>Vision statement</b>
+        \n\nThe Turchin Center for the Visual Arts will continue to be an engaging and accessible resource
+        responding to diverse educational, cultural and health needs by meeting participants wherever they
+        are in their personal relationship with the visual arts and providing them with opportunities to access
+        the power of the arts to help learn, grow and heal.
+    </string>
     <string name="copyright">
         Copyright 2017, Chris Lail\n
         Student, Appalachian State University\n
@@ -12,9 +26,45 @@
     <string name="title_name">Title</string>
     <string name="artist_name">Artist</string>
     <string name="gallery_name">Gallery</string>
-    <string name="title_detail_gallery">Title: </string>
-    <string name="artist_detail_gallery">Artist: </string>
-    <string name="gallery_detail_gallery">Displayed in: </string>
-    <string name="exhibition_dates_detail_gallery">Exhibition dates: </string>
-    <string name="description">Description: </string>
+    <string name="title_detail_gallery"><b>Title:</b> </string>
+    <string name="artist_detail_gallery"><b>Artist:</b> </string>
+    <string name="displayed_detail_gallery"><b>Displayed in:</b> </string>
+    <string name="exhibition_dates_detail_gallery"><b>Exhibition dates:</b> </string>
+    <string name="description"><b>Description:</b> </string>
+
+    <string name="gallery_description_1">\n\nThe 320-mile New River begins high in the mountains of
+        northwestern North Carolina, deep in the heart of the Southern Appalachians. The New, as it
+        is affectionately called, actually begins as two rivers, the North Fork in Ashe County and
+        South Fork in Watauga County. The two forks join in Alleghany County and flow north from
+        North Carolina’s Blue Ridge into Virginia and West Virginia. One of the oldest rivers in the world
+        and certainly the oldest in the United States, the headwaters of the New wind more than 100 miles through
+        the Appalachians; the forks join just a few miles south of the North Carolina-Virginia line.
+        The New River continues its somewhat unusual northward flow through southwestern Virginia and West Virginia
+        into the Kanawha and Ohio rivers—its waters eventually reaching the Gulf of Mexico by way of the Mississippi River.
+
+        \n\nPartnering with the Center for Appalachian Studies, Tom Hansell’s graduate seminar, Sustainability
+        and the Arts in Appalachia (AS5065), and New River Conservancy (NRC) to showcase the headwaters of the
+        New River in the northwestern corner of North Carolina, the Turchin Center for the Visual Arts supports
+        both the mission of the NRC and Appalachian State University’s commitment to an engaged campus culture
+        inspired by the ideal of sustainable communities. The New River Conservancy believes that clean water,
+        healthy land and empowered people benefit the surrounding communities by creating a watershed where people
+        want to live, work and play.\n</string>
+
+    <string name="gallery_description_2">\n\nWayne Trapp was an enigmatic artist; some would say a Renaissance man
+        – the consummate artist who does a bit of everything, always executing his chosen craft well. He had an
+        insatiable curiosity, not only for art but also for, well; everything that life offered. With his pipe
+        clenched between his teeth, he never stopped making marks—in his journals, on art paper, on canvas, in
+        bronze, in stone and in steel. He collected cars, good wine, conversation, read Nietzche and was always
+        up for the next adventure. He wrote: “My sense of design and my curiosity of how things are made is as
+        innate to me as eating and breathing. The lines and elements of light fixtures, pepper mills, skyscrapers,
+        bar stools, writing instruments—virtually all things human made—hold intrigue for me if their designs
+        shout form and function.” Trapp made his first sculpture at the age of nine and didn’t stop making until
+        his death last November. He had a rich life, he served in the Army, went to art school in Pittsburg,
+        while driving a cab to make money, spent a short time as an art director, something, he claimed, turned
+        him into a self-described “hippie,” and then farmer and finally a sculptor.
+
+        \n\nThe exhibition at the Turchin Center features a variety of Trapp’s creative work: paintings, drawings in
+        pencil and ink on paper and intimate sculptural forms in bronze and steel.\n</string>
+
+
 </resources>

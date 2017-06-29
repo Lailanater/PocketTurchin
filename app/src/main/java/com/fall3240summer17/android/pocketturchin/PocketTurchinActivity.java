@@ -48,8 +48,12 @@ public class PocketTurchinActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (mFragmentManager.getBackStackEntryCount() != 0) {
-            mFragmentManager.popBackStack("GalleryDetailFragment", 1);
-            updateFragment(FRAGMENT_GALLERY);
+            boolean galleryReturn = mFragmentManager.popBackStackImmediate("GalleryDetailFragment", 1);
+            boolean favReturn = mFragmentManager.popBackStackImmediate("FavsFragment", 1);
+            if (galleryReturn)
+                updateFragment(FRAGMENT_GALLERY);
+            else if (favReturn)
+                updateFragment(FRAGMENT_FAVS);
         } else {
             super.onBackPressed();
         }

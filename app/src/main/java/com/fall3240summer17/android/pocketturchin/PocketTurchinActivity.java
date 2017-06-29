@@ -15,8 +15,7 @@ public class PocketTurchinActivity extends AppCompatActivity {
 
     private static final int FRAGMENT_GALLERY = 0;
     private static final int FRAGMENT_FAVS = 1;
-    private static final int FRAGMENT_SEARCH = 2;
-    private static final int FRAGMENT_ABOUT = 3;
+    private static final int FRAGMENT_ABOUT = 2;
 
     private FragmentManager mFragmentManager;
     private Fragment mFragment;
@@ -33,9 +32,6 @@ public class PocketTurchinActivity extends AppCompatActivity {
                 case R.id.navigation_favs:
                     updateFragment(FRAGMENT_FAVS);
                     return true;
-                case R.id.navigation_search:
-                    updateFragment(FRAGMENT_SEARCH);
-                    return true;
                 case R.id.navigation_about:
                     updateFragment(FRAGMENT_ABOUT);
                     return true;
@@ -49,7 +45,7 @@ public class PocketTurchinActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (mFragmentManager.getBackStackEntryCount() != 0) {
             boolean galleryReturn = mFragmentManager.popBackStackImmediate("GalleryDetailFragment", 1);
-            boolean favReturn = mFragmentManager.popBackStackImmediate("FavsFragment", 1);
+            boolean favReturn = mFragmentManager.popBackStackImmediate("FavsFragment", 2);
             if (galleryReturn)
                 updateFragment(FRAGMENT_GALLERY);
             else if (favReturn)
@@ -74,8 +70,6 @@ public class PocketTurchinActivity extends AppCompatActivity {
             mFragment = new GalleryFragment();
         } else if (fragmentView == FRAGMENT_FAVS) {
             mFragment = new FavsFragment();
-        } else if (fragmentView == FRAGMENT_SEARCH) {
-            mFragment = new SearchFragment();
         } else if (fragmentView == FRAGMENT_ABOUT){
             mFragment = new AboutFragment();
         }

@@ -94,6 +94,27 @@ public class GalleryList {
         return items;
     }
 
+    public List<GalleryItem> findMatches(String query) {
+        String[] queries = query.split(" ");
+        List<GalleryItem> items = new ArrayList<>();
+
+        GalleryItemCursorWrapper cursor = queryGalleryItems(
+                null,
+                queries
+        );
+
+        try {
+            cursor.moveToFirst();
+            while(!cursor.isAfterLast()) {
+                items.add(cursor.getGalleryItem());
+                cursor.moveToNext();
+            }
+        } finally {
+            cursor.close();
+        }
+        return items;
+    }
+
     public void addGalleryItem(GalleryItem item) {
         ContentValues values = getContentValues(item);
 
